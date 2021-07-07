@@ -31,8 +31,8 @@ def get_data(html):
 
     for plugin in plugins:
         # [ plugin1, plugin2, plugin3, plugin4 ]
-        name = plugin.find('h2').text
-        url = plugin.find('h2').find('a').get('href')
+        name = plugin.find("h3").text
+        url = plugin.find('h3').find('a').get('href')
 
         r = plugin.find('span', class_='rating-count').find('a').text
         rating = refined(r)
