@@ -22,3 +22,4 @@ soup = BeautifulSoup(req.text, "lxml")
 block = soup.find("div", {"class": "meta"})
 artikul = block.find_all("span")[0].text
 print(artikul)
+# test
