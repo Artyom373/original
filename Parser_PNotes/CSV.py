@@ -11,17 +11,17 @@ def get_html(url):
 
 def refined(s):
     # 1,470 total ratings
-    r = s.split(' ')[0]   # 1,470
-    return r.replace(',', '') # 1470
+    r = s.split(' ')[0]   # 1,470  Преобразуем строку и разделяем ее пробелом, забираем 0 элемент
+    return r.replace(',', '') # 1470 Заменяем запятую на пустоту
 
 
 def write_csv(data):
-    with open('plugins.csv', 'a') as f:
+    with open('plugins.csv', 'a') as f:  # a - записать в конец данные, w -перезаписывает
         writer = csv.writer(f)
 
         writer.writerow( [data['name'],
                          data['url'],
-                         data['reviews']] )
+                         data['reviews']] ) # принимает только один аргумент из-за этого используем картеж "(" или список "["
 
 
 def get_data(html):

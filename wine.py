@@ -4,6 +4,11 @@ import fake_useragent
 
 user = fake_useragent.UserAgent().random
 
+
+def refined(s):
+  r = s.split(':')[1]
+  print(r)
+
 headers = {
   "Host" : "winestyle.ru",
   "User-Agent" : user,
@@ -20,6 +25,6 @@ with open("sites.html", "w", encoding="utf-8") as file:
 
 soup = BeautifulSoup(req.text, "lxml")
 block = soup.find("div", {"class": "meta"})
-artikul = block.find_all("span")[0].text
-print(artikul)
+artikul = block.find("span", class_= "bg-text").text
+rating = refined(artikul)
 #
