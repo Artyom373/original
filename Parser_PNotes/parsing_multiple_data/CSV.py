@@ -2,18 +2,14 @@ import requests
 from bs4 import BeautifulSoup
 import csv
 
-
-
 def get_html(url):
     r = requests.get(url)
     return r.text
-
 
 def refined(s):
     # 1,470 total ratings
     r = s.split(' ')[0]   # 1,470  Преобразуем строку и разделяем ее пробелом, забираем 0 элемент
     return r.replace(',', '') # 1470 Заменяем запятую на пустоту
-
 
 def write_csv(data):
     with open('plugins.csv', 'a') as f:  # a - записать в конец данные, w -перезаписывает
