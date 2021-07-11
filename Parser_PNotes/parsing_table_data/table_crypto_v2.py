@@ -38,7 +38,7 @@ def get_page_data(html):
         tds = tr.find_all('td')
         try:
             name = tds[2].find("div", display="flex").find("p").text
-            symbol = tds[2].find("div", display="flex").find('a').text
+            symbol = tds[2].find("div", display="flex").find_all('p')[1].text
             url = 'https://coinmarketcap.com' + tds[2].find('a').get('href')
             price = tds[3].find('a').text
             price = refined(price)
