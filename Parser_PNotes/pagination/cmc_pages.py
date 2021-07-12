@@ -34,6 +34,7 @@ def get_page_data(html):
         except:
             url = ''
 
+
         try:
             price = tds[3].find('a').get('data-usd').strip()
         except:

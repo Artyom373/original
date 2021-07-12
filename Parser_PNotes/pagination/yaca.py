@@ -42,7 +42,7 @@ def get_page_data(html):
             url = ''
 
         try:
-            snippet = li.find('div', class_='yaca-snippet__text').text.strip()
+            snippet = li.find('div', class_='yaca-snippet__text').text.strip()  #strip очищает от раличных спец символов /t /n и т.д.
         except:
             snippet = ''
 
